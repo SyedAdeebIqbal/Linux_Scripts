@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#Write a shell script that takes user input as an IP address and determines whether it's an IPv4 address, IPv6 address, or invalid IP.
+
+echo "Enter a ip address : "
+read Ip_Address
+
+validIPAddress() {
+        v4_pattern="^((25[0-5]|2[0-4][0-9]|[0-1]?[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|[0-1]?[0-9]{1,2})$"
+        v6_pattern="^([0-9a-fA-F]{1,4}:){7}([0-9a-fA-F]{1,4})$"
+
+if [[ $Ip_Address =~ $v4_pattern ]];
+then
+        echo "It is an IPv4 Address"
+elif [[ $Ip_Address =~ $v6_pattern ]];
+then
+        echo "It is an Ipv6 Address"
+
+else
+        echo "Invalid Ip Address"
+fi
+
+
+}

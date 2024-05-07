@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#Write a shell script to insert c code to .c file and execute that file
+
+c_compiler(){
+        exe_command="gcc Task_2.c -o Task_2.1"
+        eval $exe_command
+}
+
+c_compiler

@@ -8,3 +8,12 @@ file_encryption(){
 }
 
 file_encryption
+
+
+output : 
+
+gpg: AES256.CFB encrypted data
+gpg: encrypted with 1 passphrase
+#!/bin/bash
+Date=03-05-2024
+This is Shell scripting Task 2

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#Create a script that scans a range of ports on a given ip address and reports which ports are open.
+
+echo "Enter an Ip : "
+read Ip
+if ["$Ip" == "" ];
+then
+        echo "Enter a valid Ip address"
+else
+        nc -nvz $Ip 1-1200
+fi

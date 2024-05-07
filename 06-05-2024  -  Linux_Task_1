@@ -1,0 +1,14 @@
+#!/bin/bash
+#Write a shell script that displays detailed information about a given IP address,
+#including its network, subnet mask, and broadcast address.
+
+
+echo "Enter an ip address: "
+read ip_address
+
+function network_info() {
+       ip_info="ipcalc -nb $ip_address"
+       eval $ip_info
+}
+
+network_info

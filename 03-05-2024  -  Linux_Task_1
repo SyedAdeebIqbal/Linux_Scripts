@@ -1,0 +1,44 @@
+#!/bin/bash
+
+#Write a script that monitors system resources (CPU, memory, disk) and sends notifications if certain thresholds are exceeded.
+
+system_monitoring(){
+        disk_usage=$(df -h /home/user1/Shell_Scripting/)
+        memory_usage=$(free -h)
+        cpu_usage=$(mpstat)
+        echo ""
+        echo "*****Disk_Usage*****"
+        echo ""
+        echo "$disk_usage"
+        echo "   "
+
+        echo "*****Memory_Usage*****"
+        echo ""
+        echo "$memory_usage"
+        echo "   "
+
+        echo "*****Cpu_Usage*****"
+        echo ""
+        echo "$cpu_usage"
+        echo "   "
+}
+
+cpu_usage(){
+        echo "enter max cpu usage value: "
+        read max_cpu_usage
+        i=0
+        while ((i<6));
+        do
+                cpu_usage=`top -n 1 | grep '%Cpu'|awk '{print $8}' | cut -f 1 -d "."`
+
+                if [ "$cpu_usage" -gt "$max_cpu_usage" ] ;
+                then
+                        echo "cpu warning!!!"
+                else
+                        echo "cpu okay!"
+                fi
+
+        i=$((i+1))
+        sleep 10
+        done
+}

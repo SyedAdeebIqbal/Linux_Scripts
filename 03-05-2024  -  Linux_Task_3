@@ -1,0 +1,11 @@
+#!/bin/bash
+#Write a shell script that pings a given IP address or hostname in Windows using the ping command and displays the result
+echo "Enter a Ip Address : "
+read Ip_address
+
+ping_host() {
+            ping_result="ping -c4 $Ip_address"
+            eval "$ping_result"
+        }
+
+ping_host

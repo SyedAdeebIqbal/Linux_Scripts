@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#write a script that encrypts specified files using GPG or other encryption methods
+
+file_encryption(){
+        encryption=$(gpg -c SampleFile.txt)
+        echo "$encryption"
+}
+
+file_encryption

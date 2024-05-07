@@ -1,0 +1,29 @@
+#!/bin/bash
+
+#write a script to delete empty lines from the file
+
+function del()
+
+
+
+{
+
+
+        echo 'This is a shell script'
+
+
+        echo 'This is a shell script'
+
+
+        echo 'This is a shell script'
+
+
+
+}
+
+
+
+command="sed '/^$/d' Task_1"
+
+
+eval $command
